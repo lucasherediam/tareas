@@ -1,9 +1,8 @@
-import Card from "@/components/Card";
+import Profile from "@/components/Profile";
 import { Link } from "expo-router";
-
 import { Text, View } from "react-native";
 
-export default function Index() {
+export default function ProfileScreen() {
   return (
     <View
       style={{
@@ -12,9 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Card nombre={'Tarjeta 1'} />
-      <Card nombre={'Tarjeta 2'} />
-      <Card nombre={'Tarjeta 3'} />
+      <Profile />
     </View>
   );
 }
