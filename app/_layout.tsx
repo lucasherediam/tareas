@@ -40,7 +40,7 @@ export default function RootLayout() {
       <Tabs.Screen
         name="changeName"
         options={{
-          title: 'null',
+          href: null,
         }}
       />
     </Tabs>
