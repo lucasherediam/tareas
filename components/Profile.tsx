@@ -9,8 +9,8 @@ const Profile = (props: Props) => {
     const [newName, setNewName] = useState("");
 
     const changeName = () => {
-        setName(newName); // Cambiar el nombre con el valor del input
-        setModalVisible(false); // Cerrar el modal
+        setName(newName);
+        setModalVisible(false);
     }
 
     return (
@@ -25,17 +25,19 @@ const Profile = (props: Props) => {
                 visible={modalVisible}
                 onRequestClose={() => setModalVisible(false)}
             >
-                <View style={styles.modalView}>
-                    <Text style={styles.modalText}>Ingrese nuevo nombre:</Text>
-                    <TextInput
-                        style={styles.inputStyle}
-                        placeholder='Ingrese nuevo nombre'
-                        value={newName}
-                        onChangeText={setNewName}
-                    />
-                    <Pressable style={styles.saveButton} onPress={changeName}>
-                        <Text style={styles.textPressableStyle}>Guardar</Text>
-                    </Pressable>
+                <View style={styles.modalContainer}>
+                    <View style={styles.modalView}>
+                        <Text style={styles.modalText}>Ingrese nuevo nombre:</Text>
+                        <TextInput
+                            style={styles.inputStyle}
+                            placeholder='Ingrese nuevo nombre'
+                            value={newName}
+                            onChangeText={setNewName}
+                        />
+                        <Pressable style={styles.saveButton} onPress={changeName}>
+                            <Text style={styles.textPressableStyle}>Guardar</Text>
+                        </Pressable>
+                    </View>
                 </View>
             </Modal>
         </View>
@@ -65,6 +67,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 20,
         fontSize: 18,
+    },
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     modalView: {
         margin: 20,
